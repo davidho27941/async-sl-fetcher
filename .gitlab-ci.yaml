@@ -1,0 +1,13 @@
+stages:
+  - build 
+Build_Images:
+  tags:
+    - build
+  stage: build
+  image: docker:27.0.3
+  variables:
+    VERSION: v0.1.0
+  script:
+    - docker build -t gitlab.homelab.me:5050/side-project/async-sl-fetcher:$VERSION . -f Dockerfile
+    - echo $GITLAB_PAT | docker login gitlab.homelab.me:5050 -u $GITLAB_USER --password-stdin
+    - docker push gitlab.homelab.me:5050/side-project/async-sl-fetcher:$VERSION
