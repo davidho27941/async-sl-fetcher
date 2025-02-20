@@ -1,7 +1,7 @@
 FROM python:3.12 AS base
 
-RUN apt update && \
-    apt install vim && \
+RUN apt -y update && \
+    apt -y install vim && \
     pip install uv && \
     mkdir /root/async-sl-fetcher
 
