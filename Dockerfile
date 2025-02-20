@@ -6,4 +6,5 @@ RUN apt -y update && \
     mkdir /root/async-sl-fetcher
 
 COPY . /root/async-sl-fetcher
+WORKDIR /root/async-sl-fetcher
 RUN uv pip install --system -r requirements.txt
