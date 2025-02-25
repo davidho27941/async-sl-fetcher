@@ -8,3 +8,7 @@ RUN apt -y update && \
 COPY . /root/async-sl-fetcher
 WORKDIR /root/async-sl-fetcher
 RUN uv pip install --system -r requirements.txt
+
+EXPOSE 8888
+
+ENTRYPOINT ./entrypoint.sh
