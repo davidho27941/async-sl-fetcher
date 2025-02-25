@@ -2,3 +2,5 @@ apscheduler
 pydantic
 sqlalchemy
 pandas
+uvicorn
+fastapi
